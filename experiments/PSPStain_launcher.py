@@ -6,7 +6,7 @@ class Launcher(TmuxLauncher):
         return [
             # Command 0
             Options(
-                dataroot="",
+                dataroot="/seu_share/home/220232363/baseline/PSPStain/HER2",
                 
                 name="train",
                 checkpoints_dir='checkpoints',
@@ -30,7 +30,8 @@ class Launcher(TmuxLauncher):
                 nce_layers='0,4,8,12,16',
                 nce_T=0.07,
                 num_patches=256,
-                unet_seg='BCI_unet_seg',
+                # unet_seg='BCI_unet_seg',
+                unet_seg='MIST_unet_seg',
 
                 # FDL:
                 lambda_gp=10.0,
@@ -40,8 +41,10 @@ class Launcher(TmuxLauncher):
                 dataset_mode='aligned',  # chooses how datasets are loaded. [unaligned | aligned | single | colorization]')
                 direction='AtoB',
                 # serial_batches='', # if true, takes images in order to make batches, otherwise takes them randomly
-                num_threads=15,  # '# threads for loading data')
-                batch_size=4,  # 'input batch size')
+                # num_threads=15,  # '# threads for loading data')
+                # batch_size=4,  # 'input batch size')
+                num_threads=3,  # '# threads for loading data')
+                batch_size=3,  # 'input batch size')
                 load_size=1024,  # 'scale images to this size')
                 crop_size=512,  # 'then crop to this size')
                 preprocess='resize_and_crop',  # ='scaling and cropping of images at load time [resize_and_crop | crop | scale_width | scale_width_and_crop | none]')
